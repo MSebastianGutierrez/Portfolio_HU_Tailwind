@@ -51,7 +51,7 @@
         });
 
         // ============================================
-        // TYPING ANIMATION (sin cambios)
+        // TYPING ANIMATION 
         // ============================================
         const typingText = document.getElementById('typingText');
         const words = ['Full Stack Developer', 'Cloud AWS', 'DevOps', 'Redes de Datos'];
@@ -82,7 +82,7 @@
         type();
 
         // ============================================
-        // SMOOTH SCROLL (sin cambios)
+        // SMOOTH SCROLL 
         // ============================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -109,7 +109,7 @@
         revealElements.forEach(el => observer.observe(el));
 
         // ============================================
-        // STATS COUNTER ANIMATION (con mejora)
+        // STATS COUNTER ANIMATION 
         // ============================================
         let statsAnimated = false;
 
@@ -145,7 +145,7 @@
         // ============================================
         // CONSOLE EASTER EGG
         // ============================================
-        console.log('%c👋 ¡Hola, Reclutador!', 'color: #3b82f6; font-size: 24px; font-weight: bold;');
+        console.log('%c ¡Hola, Reclutador!', 'color: #3b82f6; font-size: 24px; font-weight: bold;');
         console.log('%cMiguel Sebastián Gutiérrez - Desarrollador Full Stack', 'color: #94a3b8; font-size: 14px;');
         console.log('%c📧 sebagutierrez374@gmail.com | 📱 +54 261-6166627', 'color: #64748b; font-size: 12px;');
         console.log('%c¡Listo para aportar valor a su equipo!', 'color: #10b981; font-size: 14px; font-weight: 600;');
