@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miguel Sebastián Gutiérrez - Desarrollador Full Stack</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- 1. CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 2. CDN de Bootstrap CSS (para componentes híbridos) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- 3. Configuración y Estilos Personalizados Mínimos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-slate-900 text-white antialiased">
+
+    <!-- ========================================== -->
+    <!-- NAVBAR (ESTRUCTURA ORIGINAL CON TAILWIND)  -->
+    <!-- ========================================== -->
+    <nav class="fixed top-0 left-0 right-0 z-[1000] bg-slate-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#hero" class="text-2xl font-extrabold tracking-tight text-white">MSG.</a>
+    
+                <!-- Mobile Menu Toggle (Hamburguesa) -->
+                <button
+                    class="mobile-menu-toggle flex flex-col gap-1.5 bg-transparent border-none cursor-pointer p-2 md:hidden"
+                    id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span class="block w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white rounded transition-all duration-300"></span>
+                </button>
+    
+                <!-- Menú de Navegación -->
+                <ul class="nav-menu hidden md:flex items-center gap-8 list-none m-0 p-0" id="navMenu">
+                    <li><a href="#perfil"
+                            class="nav-link text-slate-400 hover:text-white no-underline font-medium text-sm transition-colors duration-200">Perfil</a>
+                    </li>
+                    <li><a href="#habilidades"
+                            class="nav-link text-slate-400 hover:text-white no-underline font-medium text-sm transition-colors duration-200">Habilidades</a>
+                    </li>
+                    <li><a href="#experiencia"
+                            class="nav-link text-slate-400 hover:text-white no-underline font-medium text-sm transition-colors duration-200">Experiencia</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="nav-link text-slate-400 hover:text-white no-underline font-medium text-sm transition-colors duration-200">Proyecto</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="btn-hire inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-200">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION                              -->
+    <!-- ========================================== -->
+    <section class="min-h-screen flex items-center justify-center pt-32 pb-20 relative overflow-hidden" id="hero">
+        <!-- Efecto de fondo radial -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,transparent_50%)] pointer-events-none">
+        </div>
+
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
+                Miguel Sebastián<br />
+                <span class="text-gradient">Gutiérrez</span>
+            </h1>
+
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+                Tecnico superior en Desarrollo de Software | Programador Full Stack 
+            </p>
+
+            <!-- Typing Animation -->
+            <div class="flex items-center justify-center mb-12 min-h-[40px]">
+                <span class="text-xl text-blue-500 font-semibold" id="typingText"></span>
+                <span class="typing-cursor text-blue-500 font-semibold text-xl">|</span>
+            </div>
+
+            <!-- Botones Hero -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact"
+                    class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-full transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+                    <i class="fas fa-envelope"></i> Contactar
+                </a>
+                <a href="#" onclick="window.print(); return false;"
+                    class="inline-flex items-center gap-2 text-white font-semibold px-8 py-3.5 rounded-full border-2 border-slate-700 hover:border-blue-500 hover:bg-blue-500/10 transition-all">
+                    <i class="fas fa-download"></i> Descargar CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ABOUT / PERFIL SECTION                    -->
+    <!-- ========================================== -->
+    <section class="py-16 md:py-24" id="perfil">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">Perfil Profesional</h2>
+
+            <!-- Grid de About: 1 columna en móvil, 2 en escritorio -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-12">
+                <!-- Texto -->
+                <div class="scroll-reveal space-y-4 text-slate-400 text-base leading-relaxed">
+                    <p>
+                        Tecnico superior en Desarrollo de Software, UTN Full Stack y AWS.
+                        Cuento con certificación en Git & GitHub y proyectos activos en GitHub. Lo que me aporta una
+                        sólida capacidad analítica y de resolución de problemas complejos.
+                    </p>
+                    <p>
+                        Busco aplicar mis conocimientos en desarrollo Full Stack, DevOps e Inteligencia Artificial para
+                        contribuir en proyectos reales y desafiantes. Mi enfoque combina la técnica con la
+                        innovación constante.
+                    </p>
+                </div>
+
+                <!-- Stats Grid: 3 columnas en móvil, 3 en escritorio (con gap) -->
+                <div class="grid grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Tarjeta 1 -->
+                    <div
+                        class="stat-card scroll-reveal bg-slate-800/50 p-6 rounded-2xl text-center border-2 border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(59,130,246,0.2)] flex flex-col items-center justify-center min-h-[140px]">
+                        <div class="stat-number text-3xl sm:text-4xl font-extrabold text-white mb-1">3+</div>
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">AÑOS EXPERIENCIA</div>
+                    </div>
+                
+                    <!-- Tarjeta 2 -->
+                    <div
+                        class="stat-card scroll-reveal bg-slate-800/50 p-6 rounded-2xl text-center border-2 border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(59,130,246,0.2)] flex flex-col items-center justify-center min-h-[140px]">
+                        <div class="stat-number text-3xl sm:text-4xl font-extrabold text-white mb-1">10+</div>
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">PROYECTOS ACADEMICOS</div>
+                    </div>
+                
+                    <!-- Tarjeta 3 -->
+                    <div
+                        class="stat-card scroll-reveal bg-slate-800/50 p-6 rounded-2xl text-center border-2 border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(59,130,246,0.2)] flex flex-col items-center justify-center min-h-[140px]">
+                        <div class="stat-number text-3xl sm:text-4xl font-extrabold text-white mb-1">5+</div>
+                        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">CERTIFICACIONES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SKILLS / HABILIDADES SECTION              -->
+    <!-- ========================================== -->
+    <section class="py-16 md:py-24 bg-slate-800/30" id="habilidades">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">Habilidades Técnicas</h2>
+            <p class="text-center text-slate-400 max-w-2xl mx-auto mb-12">Competencias tecnológicas y herramientas
+                dominadas</p>
+
+            <!-- Grid de Skills: 1 columna en móvil, 2 en tablet, 3 en escritorio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="skill-card scroll-reveal bg-slate-800/50 p-6 md:p-8 rounded-2xl border-2 border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-2 hover:shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-slate-700 rounded-xl flex items-center justify-center text-blue-500 text-2xl">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Desarrollo Full Stack</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">PHP</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">MySQL</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">MongoDB</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Express</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">React</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Node</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="skill-card scroll-reveal bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-2 hover:shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-slate-700 rounded-xl flex items-center justify-center text-blue-500 text-2xl">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Tools & DevOps</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">AWS</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Docker</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Git
+                            - Github</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="skill-card scroll-reveal bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-2 hover:shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 bg-slate-700 rounded-xl flex items-center justify-center text-blue-500 text-2xl">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Redes e Infraestructura</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Routing
+                            & Switching</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Configuración
+                            y gestión de hardware de red</span>
+                        <span
+                            class="bg-slate-700/50 text-slate-300 px-4 py-1.5 rounded-full text-sm font-medium border border-slate-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors">Automatización
+                            de redes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- EXPERIENCE SECTION                        -->
+    <!-- ========================================== -->
+    <section class="py-16 md:py-24" id="experiencia">
+        <div class="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">Experiencia Laboral</h2>
+            <p class="text-center text-slate-400 max-w-2xl mx-auto mb-12">Trayectoria profesional en tecnología y
+                servicios técnicos</p>
+
+            <!-- Timeline con líneas (diseño personalizado) -->
+            <div class="relative">
+                <!-- Línea vertical central (oculta en móvil, visible en tablet/escritorio) -->
+                <div
+                    class="hidden md:block absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-600 to-blue-800">
+                </div>
+
+                <!-- Item 1 -->
+                <div class="relative mb-12 md:mb-16 scroll-reveal">
+                    <div
+                        class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-slate-900 shadow-[0_0_0_4px_#3b82f6] z-10">
+                    </div>
+                    <div
+                        class="md:w-5/12 ml-auto md:mr-[calc(50%+2rem)] bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]">
+                        <div class="text-blue-500 text-sm font-semibold mb-1">2024 - Actualidad</div>
+                        <h3 class="text-xl font-bold">Desarrollador de software especializado en redes de datos</h3>
+                        <div class="text-slate-400 font-medium mb-3">Freelance</div>
+                        <ul class="list-none space-y-1 text-slate-400 text-sm">
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Finalización de Desarrollo de software</li>
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Finalización de esp. en redes de datos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative mb-12 md:mb-16 scroll-reveal">
+                    <div
+                        class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-slate-900 shadow-[0_0_0_4px_#3b82f6] z-10">
+                    </div>
+                    <div
+                        class="md:w-5/12 mr-auto md:ml-[calc(50%+2rem)] bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]">
+                        <div class="text-blue-500 text-sm font-semibold mb-1">2022 - 2024</div>
+                        <h3 class="text-xl font-bold">Desarrollo web - Soporte IT</h3>
+                        <div class="text-slate-400 font-medium mb-3">Freelance</div>
+                        <ul class="list-none space-y-1 text-slate-400 text-sm">
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Mantenimiento de servidores</li>
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Landing page para oficinas</li>
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Actualizaciones y armado de equipos informáticos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative scroll-reveal">
+                    <div
+                        class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-slate-900 shadow-[0_0_0_4px_#3b82f6] z-10">
+                    </div>
+                    <div
+                        class="md:w-5/12 ml-auto md:mr-[calc(50%+2rem)] bg-slate-800/50 p-6 md:p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all hover:shadow-[0_0_40px_rgba(59,130,246,0.2)]">
+                        <div class="text-blue-500 text-sm font-semibold mb-1">2021 - Actualidad</div>
+                        <h3 class="text-xl font-bold">Soporte IT trainee</h3>
+                        <div class="text-slate-400 font-medium mb-3">Oficinas abogados/contadores</div>
+                        <ul class="list-none space-y-1 text-slate-400 text-sm">
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Cableado estructurado</li>
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Mantenimiento de equipos</li>
+                            <li
+                                class="relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-blue-500">
+                                Instalación de software de oficina</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PROJECTS SECTION                          -->
+    <!-- ========================================== -->
+    <section class="py-16 md:py-24 bg-slate-800/30" id="projects">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">Proyectos destacados</h2>
+            <p class="text-center text-slate-400 max-w-2xl mx-auto mb-12">Un conjunto completo de herramientas para
+                crear aplicaciones robustas y escalables.</p>
+
+            <!-- Grid de Proyectos: 1 columna en móvil, 2 en tablet, 3 en escritorio -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Proyecto 1 -->
+                <div
+                    class="project-card-hover bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-2 hover:shadow-lg group scroll-reveal">
+                    <div class="project-image relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                            alt="Analytics Dashboard" class="w-full h-full object-cover" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-slate-900/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button
+                                class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors hover:scale-110"><i
+                                    class="fas fa-external-link-alt"></i></button>
+                            <button
+                                class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors hover:scale-110"><i
+                                    class="fab fa-github"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-2">Distributed System</h3>
+                        <p class="text-slate-400 text-sm mb-4">El sistema simula una arquitectura distribuida
+                            cliente-servidor en python</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">Python</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">HTML</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">CSS</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">SQLite</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/MSebastianGutierrez/Sistema_Distribuido_Python.git"
+                                target="_blank"
+                                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-full text-sm transition-colors">
+                                Ver caso de estudio
+                            </a>
+                            <button
+                                class="w-10 h-10 rounded-xl border-2 border-slate-600 text-slate-400 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-colors"><i
+                                    class="fas fa-arrow-up-right-from-square"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div
+                    class="project-card-hover bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-2 hover:shadow-lg group scroll-reveal">
+                    <div class="project-image relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+                            alt="E-Commerce Platform" class="w-full h-full object-cover" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-slate-900/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button
+                                class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors hover:scale-110"><i
+                                    class="fas fa-external-link-alt"></i></button>
+                            <button
+                                class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors hover:scale-110"><i
+                                    class="fab fa-github"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-2">E - Commerce Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">Este es un proyecto académico para explicar arquitectura
+                            de microservicios.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">React</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">Docker</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">MongoDB</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">Redis</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">RabbitMQ</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/MSebastianGutierrez/Ecommerce" target="_blank"
+                                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-full text-sm transition-colors">
+                                Ver caso de estudio
+                            </a>
+                            <button
+                                class="w-10 h-10 rounded-xl border-2 border-slate-600 text-slate-400 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-colors"><i
+                                    class="fas fa-arrow-up-right-from-square"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div
+                    class="project-card-hover bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700 hover:border-blue-500 transition-all hover:-translate-y-2 hover:shadow-lg group scroll-reveal">
+                    <div class="project-image relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop"
+                            alt="Social Connect App" class="w-full h-full object-cover" />
+                        <div
+                            class="project-overlay absolute inset-0 bg-slate-900/80 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button
+                                class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors hover:scale-110"><i
+                                    class="fas fa-external-link-alt"></i></button>
+                            <button
+                                class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors hover:scale-110"><i
+                                    class="fab fa-github"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl font-bold mb-2">Social Connect App</h3>
+                        <p class="text-slate-400 text-sm mb-4">Real-time social networking application focused on
+                            community building.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">MongoDB</span>
+                            <span class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">React
+                                Native</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">Node.js</span>
+                            <span
+                                class="bg-slate-700/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded">Socket.io</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <a href="https://github.com/MSebastianGutierrez/Ecommerce" target="_blank"
+                                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-full text-sm transition-colors">
+                                Ver caso de estudio
+                            </a>
+                            <button
+                                class="w-10 h-10 rounded-xl border-2 border-slate-600 text-slate-400 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-colors"><i
+                                    class="fas fa-arrow-up-right-from-square"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CONTACT SECTION                           -->
+    <!-- ========================================== -->
+    <section class="py-16 md:py-24" id="contact">
+        <div class="container max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-2">
+                Hablemos de tu <span class="text-gradient">Proyecto.</span>
+            </h2>
+            <p class="text-center text-slate-400 mb-12">¿Tienes una idea en mente o simplemente quieres saludar?</p>
+
+            <!-- Formulario de Contacto (Componente Híbrido #2: Bootstrap) -->
+            <!-- Uso clases de Bootstrap como .form-control, .form-label, .btn-primary y las adapto con Tailwind -->
+            <div class="bg-slate-800/50 p-6 sm:p-8 md:p-12 rounded-3xl border border-slate-700 scroll-reveal">
+                <form id="contactForm" class="space-y-6">
+                    <div class="form-group">
+                        <label for="name" class="form-label text-white font-semibold">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required
+                            class="form-control bg-slate-900 border-2 border-slate-700 text-white rounded-xl px-4 py-3.5 w-full focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-colors placeholder:text-slate-500" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label text-white font-semibold">Email</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required
+                            class="form-control bg-slate-900 border-2 border-slate-700 text-white rounded-xl px-4 py-3.5 w-full focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-colors placeholder:text-slate-500" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label text-white font-semibold">Mensaje</label>
+                        <textarea id="message" name="message" placeholder="Tu mensaje..." rows="5" required
+                            class="form-control bg-slate-900 border-2 border-slate-700 text-white rounded-xl px-4 py-3.5 w-full focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-colors placeholder:text-slate-500 resize-y min-h-[120px]"></textarea>
+                    </div>
+
+                    <!-- Botón con estilo Bootstrap + Tailwind (Componente Híbrido #3) -->
+                    <button type="submit"
+                        class="btn btn-primary w-full bg-blue-600 hover:bg-blue-700 border-0 text-white font-semibold py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(59,130,246,0.3)] flex items-center justify-center gap-2 text-base">
+                        <i class="fas fa-paper-plane"></i> Enviar mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                    -->
+    <!-- ========================================== -->
+    <footer class="py-12 border-t border-slate-800 text-center">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="mailto:sebagutierrez374@gmail.com" aria-label="Email"
+                    class="w-12 h-12 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors hover:-translate-y-1 border border-slate-700"><i
+                        class="fas fa-envelope"></i></a>
+                <a href="https://github.com/MSebastianGutierrez" target="_blank" aria-label="GitHub"
+                    class="w-12 h-12 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors hover:-translate-y-1 border border-slate-700"><i
+                        class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"
+                    class="w-12 h-12 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors hover:-translate-y-1 border border-slate-700"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.credly.com" target="_blank" aria-label="Credly AWS"
+                    class="w-12 h-12 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center text-xl hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors hover:-translate-y-1 border border-slate-700"><i
+                        class="fab fa-aws"></i></a>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 Sebastián Gutiérrez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- SCRIPTS                                   -->
+    <!-- ========================================== -->
+    <!-- Bootstrap JS Bundle (para el toggle del navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript personalizado  -->
+    <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
